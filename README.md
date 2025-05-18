@@ -1,4 +1,6 @@
-This html file can connect to a any websocket server and send any text to it
+This project can be used to connect to a any websocket server and send any text to it
+
+To directly use it without building check `docs/index.html`
 
 Use alongside [this](https://github.com/Renji-XD/texthooker-ui) to receive from the websocket server
 
