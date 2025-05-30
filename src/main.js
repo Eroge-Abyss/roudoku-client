@@ -30,28 +30,28 @@ async function handleHost() {
   ws = new WebSocket(wsUrl);
 }
 
-function removeChineseKeepJapanese(text) {
-  const chars = ["）", "」", "？", "！", "。", "「", "…", "（"];
-  let idx = -1;
+// function removeChineseKeepJapanese(text) {
+//   const chars = ["）", "」", "？", "！", "。", "「", "…", "（"];
+//   let idx = -1;
 
-  if (/\$A/gi.test(text) || text.length > 500) {
-    return "";
-  }
+//   if (/\$A/gi.test(text) || text.length > 500) {
+//     return "";
+//   }
 
-  chars.some((char) => {
-    idx += 1;
-    return text.match(char);
-  });
+//   chars.some((char) => {
+//     idx += 1;
+//     return text.match(char);
+//   });
 
-  const x = text.split(chars[idx]);
-  let res = "";
+//   const x = text.split(chars[idx]);
+//   let res = "";
 
-  for (let i = 0; i < Math.floor(x.length / 2); i++) {
-    res += x[i];
-  }
+//   for (let i = 0; i < Math.floor(x.length / 2); i++) {
+//     res += x[i];
+//   }
 
-  return res + chars[idx];
-}
+//   return res + chars[idx];
+// }
 
 // Change font size when value changes
 fontSizeInput.addEventListener("change", (e) => {
@@ -86,7 +86,7 @@ let callback = function (mutations) {
       sendToServer(ptag.textContent);
 
       //Wrap the inserted text in a div and append a "remove line" button.
-      ptag.textContent = removeChineseKeepJapanese(ptag.textContent);
+      ptag.textContent = ptag.textContent //removeChineseKeepJapanese(ptag.textContent);
       let text = ptag.textContent;
       ptag.remove();
       let div = document.createElement("div");
